@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(63, 63, 63);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  transition: 0.5s;
+  &.active {
+    background-color: rgb(218, 218, 218);
+  }
+}
+
+#toggle {
+  position: relative;
+  display: block;
+  width: 320px;
+  height: 160px;
+  border-radius: 160px;
+  background-color: rgb(26, 26, 26);
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  transition: 0.5s;
+  .indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: hsla(0, 0%, 47%, 1);
+
+    background: radial-gradient(
+      circle,
+      hsla(0, 0%, 47%, 1) 0%,
+      hsla(0, 0%, 20%, 1) 100%
+    );
+
+    background: -moz-radial-gradient(
+      circle,
+      hsla(0, 0%, 47%, 1) 0%,
+      hsla(0, 0%, 20%, 1) 100%
+    );
+
+    background: -webkit-radial-gradient(
+      circle,
+      hsla(0, 0%, 47%, 1) 0%,
+      hsla(0, 0%, 20%, 1) 100%
+    );
+
+    cursor: pointer;
+    transform: scale(0.9);
+    box-shadow: rgba(196, 198, 200, 0.8) 0px 1px 2px 0px,
+      rgba(193, 196, 198, 0.8) 0px 1px 3px 1px;
+    transition: 0.5s;
+  }
+  &.active {
+    background-color: white;
+    .indicator {
+      transform: translateX(160px) scale(0.9);
+      background: hsla(0, 0%, 100%, 1);
+
+      background: radial-gradient(
+        circle,
+        hsla(0, 0%, 100%, 1) 0%,
+        hsla(105, 49%, 63%, 1) 100%
+      );
+
+      background: -moz-radial-gradient(
+        circle,
+        hsla(0, 0%, 100%, 1) 0%,
+        hsla(105, 49%, 63%, 1) 100%
+      );
+
+      background: -webkit-radial-gradient(
+        circle,
+        hsla(0, 0%, 100%, 1) 0%,
+        hsla(105, 49%, 63%, 1) 100%
+      );
+      box-shadow: rgba(23, 36, 49, 0.8) 0px 1px 2px 0px,
+        rgba(16, 32, 42, 0.8) 0px 1px 3px 1px;
+    }
+  }
+}
